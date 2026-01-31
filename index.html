@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rathish Command Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #050508;
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    /* Grid background */
+    .grid-bg {
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    
+    /* Gradient orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(150px);
+      opacity: 0.4;
+      animation: pulse 8s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.1); }
+    }
+    
+    /* Glass card */
+    .glass {
+      background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+    }
+    
+    .glass:hover {
+      transform: translateY(-4px);
+      border-color: rgba(139, 92, 246, 0.3);
+      box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+      transition: all 0.4s ease;
+    }
+    
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #8b5cf6, #ec4899, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Button */
+    .btn-glow {
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      transition: all 0.3s ease;
+    }
+    .btn-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(139, 92, 246, 0.4);
+    }
+  </style>
+</head>
+<body class="grid-bg">
+  <!-- Orbs -->
+  <div class="orb" style="width: 500px; height: 500px; background: #8b5cf6; top: -200px; left: -200px;"></div>
+  <div class="orb" style="width: 400px; height: 400px; background: #ec4899; bottom: -150px; right: -150px;"></div>
+  <div class="orb" style="width: 300px; height: 300px; background: #06b6d4; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+
+  <div class="relative z-10 min-h-screen flex flex-col items-center justify-center p-6">
+    
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-5xl md:text-7xl font-extrabold gradient-text mb-4">Rathish</h1>
+      <p class="text-xl md:text-2xl text-white/60">Command Center</p>
+    </div>
+    
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-12">
+      
+      <!-- Bot 1 -->
+      <div class="glass p-8 text-center cursor-pointer">
+        <div class="text-5xl mb-4">🤖</div>
+        <h3 class="text-xl font-bold mb-2">Main Bot</h3>
+        <p class="text-white/50 text-sm">Life • Family • Projects</p>
+      </div>
+      
+      <!-- Bot 2 -->
+      <div class="glass p-8 text-center cursor-pointer">
+        <div class="text-5xl mb-4">🚀</div>
+        <h3 class="text-xl font-bold mb-2">Ethan</h3>
+        <p class="text-white/50 text-sm">Career • Principal Path</p>
+      </div>
+      
+      <!-- Bot 3 -->
+      <div class="glass p-8 text-center cursor-pointer">
+        <div class="text-5xl mb-4">💰</div>
+        <h3 class="text-xl font-bold mb-2">Appa</h3>
+        <p class="text-white/50 text-sm">Finances • Debt Freedom</p>
+      </div>
+      
+    </div>
+    
+    <!-- Stats -->
+    <div class="glass p-8 max-w-2xl w-full mb-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-3xl font-bold gradient-text">3</div>
+          <div class="text-white/50 text-sm">AI Bots</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold gradient-text">15+</div>
+          <div class="text-white/50 text-sm">Tasks Today</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold gradient-text">∞</div>
+          <div class="text-white/50 text-sm">Potential</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold gradient-text">❤️</div>
+          <div class="text-white/50 text-sm">Family First</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CTA -->
+    <button class="btn-glow px-8 py-4 rounded-2xl font-bold text-lg">
+      Keep Grinding 💪
+    </button>
+    
+    <!-- Footer -->
+    <p class="mt-12 text-white/30 text-sm">Built with AI • Jan 31, 2026</p>
+    
+  </div>
+</body>
+</html>
